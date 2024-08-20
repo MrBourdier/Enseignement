@@ -1,0 +1,264 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    background-color: #333;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none; /* Caché par défaut sur les grands écrans */
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nom_enseignant {
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.4em;
+    margin-left : 6%;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Aligne les éléments à droite */
+    flex: 1; /* Occupe 3 fois plus d'espace que .nom_enseignant */
+    font-size: 1.2em;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Sous-menu caché par défaut */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    padding: 10px 0;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    z-index: 1000;
+}
+
+/* Styles pour les éléments du sous-menu */
+.submenu li {
+    list-style: none;
+}
+
+.submenu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.submenu a:hover {
+    background-color: #555;
+}
+
+/* Styles pour la version mobile */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-list {
+        display: none; /* Cacher le menu principal par défaut */
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .menu-list.show {
+        display: flex; /* Afficher le menu principal lorsqu'il est activé */
+    }
+
+    .menu-item {
+        width: 100%;
+    }
+
+    .submenu {
+        position: static;
+        width: 100%;
+    }
+
+    .submenu li {
+        text-align: left;
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton hamburger */
+    }
+
+    .nom_enseignant {
+        order: -1; /* Placer le nom avant le bouton menu */
+        margin-bottom: 10px;
+        margin-left : 0%;
+
+    }
+}
+
+/*espace mobile et pc */
+/* Styles pour les petits écrans (mobiles) */
+@media only screen and (max-width: 800px) {
+    .mobile-only{
+        display: none;
+        width : 1800px;
+    }
+
+    .mobile-only {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-only img {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+ .desktop-only {
+        display: none;
+    }
+}
+
+/*section 1*/
+.banner {
+    background: url('banner-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: #110163;
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.banner-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards 0.5s;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards 1s;
+}
+
+.cta-button {
+    background-color: #0056b3 ;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards 1.5s;
+}
+
+.intro-math, .features, .testimonials, .events {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.features .feature-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #110163;
+    width: 300px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.testimonial-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards;
+}
+
+.testimonials blockquote {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .banner-content {
+        padding: 30px 10px;
+    }
+    
+    .features .feature-grid {
+        flex-direction: column;
+    }
+    
+    .feature-item {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

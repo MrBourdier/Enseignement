@@ -139,13 +139,34 @@ body {
 
 /*section 1*/
 .banner {
-    background: url('banner-image.jpg') no-repeat center center;
+    position: relative;
+    background: url('salledeclasse.jpg') no-repeat center center;
     background-size: cover;
     color: #110163;
     text-align: center;
     padding: 60px 20px;
     animation: fadeIn 1s ease-in;
+    overflow: hidden; /* Assure que rien ne dépasse du conteneur */
 }
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* Couleur noire avec 50% d'opacité */
+    z-index: 1; /* Assure que l'overlay est au-dessus de l'image de fond mais sous le contenu */
+}
+
+.banner-content {
+    position: relative; /* Place le contenu au-dessus de l'overlay */
+    z-index: 2; /* Assure que le texte et les boutons sont au-dessus de l'overlay */
+}
+
+
+
 
 .banner-content h1 {
     font-size: 2.5em;
@@ -170,8 +191,41 @@ body {
     display: inline-block;
     margin-top: 20px;
     opacity: 0;
-    animation: fadeInUp 1s ease-in forwards 1.5s;
+    animation: fadeInUp 1s ease-in forwards 1s;
 }
+
+.button-container {
+    display: flex; /* Utilise Flexbox pour le conteneur */
+    justify-content: center; /* Centre horizontalement les éléments enfants */
+    margin-top: 20px; /* Ajoute de l'espace au-dessus du conteneur si nécessaire */
+}
+
+.cta-button_center {
+    background-color: orangered; /* Couleur du bouton */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Ajuste le padding si nécessaire */
+    text-decoration: none; /* Enlève la décoration de texte */
+    border-radius: 5px; /* Coins arrondis */
+    font-weight: bold; /* Texte en gras */
+    display: inline-block; /* Permet de rendre le bouton un bloc en ligne */
+    opacity: 1; /* Assure que l'opacité est appliquée après l'animation */
+    animation: fadeInUp 1s ease-in forwards 1.5s; /* Animation de l'apparition */
+}
+
+/* Animation example (optional) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
 
 .intro-math, .features, .testimonials, .events {
     padding: 40px 20px;
@@ -324,5 +378,113 @@ body {
         transform: translateY(0);
     }
 }
+
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    gap: 20px; /* Espacement entre les cartes */
+}
+
+.image-card {
+    perspective: 1000px; /* Donne l'effet 3D */
+    width: 300px; /* Largeur des cartes */
+    height: 200px; /* Hauteur des cartes */
+    position: relative;
+    perspective: 1000px; /* Donne l'effet 3D */
+    width: 300px; /* Largeur des cartes */
+    height: 200px; /* Hauteur des cartes */
+    opacity: 0; /* Initialement caché */
+    transform: translateY(30px); /* Position initiale légèrement décalée vers le bas */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Animation pour opacité et position */
+    animation: fadeInUp 0.6s ease-out forwards; /* Animation d'apparition */
+    animation-delay: 0.3s; /* Délai avant le début de l'animation */
+}
+
+.image-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.image-card:hover .image-card-inner {
+    transform: rotateY(180deg); /* Tourne la carte de 180 degrés */
+}
+
+.image-card-front,
+.image-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Cache la face arrière lors du retournement */
+}
+
+.image-card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Couleur de fond de la face avant */
+    overflow: hidden; /* Assure que rien dépasse du conteneur */
+}
+
+.image-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image pour couvrir l'espace sans déformation */
+    position: absolute; /* Positionne l'image de manière absolue */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Assure que l'image est derrière le texte */
+    opacity:30%;
+
+}
+
+.image-card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000; /* Couleur du texte */
+    z-index: 2; /* Assure que le texte est devant l'image */
+    text-align: center;
+    padding: 0 10px; /* Ajoute du padding pour le texte */
+    opacity: 100%;
+}
+
+.image-card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0056b3; /* Couleur de fond de la face arrière */
+    color: #fff; /* Couleur du texte sur la face arrière */
+    transform: rotateY(180deg); /* Cache la face arrière avant le retournement */
+    text-align: center;
+    z-index: 2; /* Assure que la face arrière est devant lors du retournement */
+}
+
+/* Définition des animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Démarre en décalé vers le bas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Fin à la position normale */
+    }
+}
+
+
+/* Ajout d'un délai d'animation pour les cartes successives */
+.image-card:nth-child(2) {
+    animation-delay: 0.6s; /* Délai spécifique pour la deuxième carte */
+}
+.image-card:nth-child(3) {
+    animation-delay: 0.9s; /* Délai spécifique pour la troisième carte */
+}
+
 
 

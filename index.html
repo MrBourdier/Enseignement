@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.png" type="image/x-icon" class="round-image">
 
+
 </head>
 
 <body>
+
     <nav class="menu">
         <div class="menu-toggle" id="menu-toggle">
             &#9776; <!-- Symbole hamburger -->
@@ -96,23 +98,23 @@
 </div>
         <style>/* Style pour le texte "Temps restant avant le brevet" */
             .brevet {
-                font-size: 1.2em; /* Taille de police réduite pour les petits écrans */
-                background: #480101;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                color: transparent;
-                text-align: center;
-                margin-bottom: 10px;
-                font-weight: bold;
+                font-size: 1.5em; /* Ajuste la taille de la police */
+                background: #480101; /* Dégradé rouge */
+    -webkit-background-clip: text; /* Pour Safari */
+    -webkit-text-fill-color: transparent; /* Pour Safari */
+    background-clip: text; /* Pour les autres navigateurs */
+    color: transparent; /* Assure que le texte est transparent */
+                text-align: center; /* Centrer le texte */
+                margin-bottom: 10px; /* Espacement entre le texte et le timer */
+                font-weight: bold; /* Met en gras pour une meilleure visibilité */
             }
             
             /* Container principal du compte à rebours */
             #countdown-container {
                 text-align: center;
                 margin-top: 20px;
-                opacity: 0; 
-                animation: fadeInUp 2s ease-in-out forwards 1s;
+                opacity: 0; /* Commence invisible */
+                animation: fadeInUp 2s ease-in-out forwards 1s; /* Animation de fondu */
             }
             
             /* Styles pour le timer */
@@ -120,8 +122,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 2em; /* Taille de police ajustée pour mobile */
-                gap: 5px; /* Réduction de l'espacement pour mobile */
+                font-size: 3em;
+                gap: 10px;
             }
             
             /* Chaque bloc de temps */
@@ -129,43 +131,55 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                color: #480101;
-            }
+                color:  #480101            }
             
             /* Styles pour les labels sous chaque nombre */
             .label {
-                font-size: 0.4em; /* Taille de police réduite pour les labels */
+                font-size: 0.5em;
                 margin-top: 5px;
             }
             
             /* Séparateurs entre les blocs de temps */
             .separator {
-                font-size: 0.8em; /* Taille de police réduite pour les séparateurs */
-                color: #480101;
-                margin-top: -30px; /* Ajustement pour un meilleur alignement */
+                font-size: 1em;
+                color:  #480101;
+
+                margin-top: -40px;
             }
+            
+
+            
             
             /* Progress bar container */
             .progress-bar-container {
-                width: 90%; /* Largeur ajustée pour mobile */
-                max-width: 300px; /* Réduction de la largeur maximale pour mobile */
-                height: 8px; /* Réduction de la hauteur pour mobile */
+                width: 80%;
+                max-width: 600px;
+                height: 10px;
                 background-color: #ccc;
                 border-radius: 5px;
                 overflow: hidden;
-                margin: 15px auto; /* Ajustement de la marge */
+                margin: 20px auto;
                 opacity: 0;
                 animation: fadeInUp 2s ease-in-out forwards 0.5s;
                 box-shadow: #480101;
+
             }
             
             /* Progress bar */
             .progress-bar {
                 width: 0;
                 height: 100%;
-                background: linear-gradient(135deg, #480101, #f90101);
+                background:linear-gradient(135deg, #480101, #f90101);
+
                 animation: loadProgressBar 3s ease-in-out forwards;
                 box-shadow: #480101;
+            }
+            
+            /* Keyframes pour la barre de progression */
+            @keyframes loadProgressBar {
+                to {
+                    width: 100%;
+                }
             }
             
             /* Animation de fondu pour le timer */
@@ -179,38 +193,32 @@
                     transform: translateY(0);
                 }
             }
+
             
-            /* Keyframes pour la barre de progression */
-            @keyframes loadProgressBar {
-                to {
-                    width: 100%;
-                }
-            }
-            
-            /* Adaptation spécifique pour les très petits écrans */
-            @media (max-width: 480px) {
-                .brevet {
-                    font-size: 1em; /* Réduction supplémentaire pour très petits écrans */
-                }
-                
-                #countdown {
-                    font-size: 1.5em; /* Réduction supplémentaire pour très petits écrans */
-                    gap: 3px; /* Réduction de l'espacement pour très petits écrans */
-                }
-            
-                .label {
-                    font-size: 0.3em; /* Réduction supplémentaire pour très petits écrans */
-                }
-            
-                .separator {
-                    font-size: 0.6em; /* Réduction supplémentaire pour très petits écrans */
-                }
-            
-                .progress-bar-container {
-                    width: 80%;
-                    height: 6px; /* Réduction supplémentaire pour très petits écrans */
-                }
-            }
+/* Adaptation spécifique pour les très petits écrans */
+@media (max-width: 480px) {
+    .brevet {
+        font-size: 1em; /* Réduction supplémentaire pour très petits écrans */
+    }
+    
+    #countdown {
+        font-size: 1.5em; /* Réduction supplémentaire pour très petits écrans */
+        gap: 3px; /* Réduction de l'espacement pour très petits écrans */
+    }
+
+    .label {
+        font-size: 0.3em; /* Réduction supplémentaire pour très petits écrans */
+    }
+
+    .separator {
+        font-size: 0.6em; /* Réduction supplémentaire pour très petits écrans */
+    }
+
+    .progress-bar-container {
+        width: 80%;
+        height: 6px; /* Réduction supplémentaire pour très petits écrans */
+    }
+}
             </style>
 
         

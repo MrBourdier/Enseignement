@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Enseignement </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/x-icon" class="round-image">
+
+
 </head>
 
 <body>
+
     <nav class="menu">
         <div class="menu-toggle" id="menu-toggle">
             &#9776; <!-- Symbole hamburger -->
@@ -22,7 +26,7 @@
             <li class="menu-item">
                 <a href="#" class="dropdown-button" data-menu="menu-2024">Année 2024-2025</a>
                 <ul class="submenu" id="menu-2024">
-                    <li><a href="4ème_2024">4ème</a></li>
+                    <li><a href="4eme_2024">4eme</a></li>
                     <li><a href="Sujet_brevet2025">Sujet Brevet</a></li>
                     <li><a href="#">Quetions flashs</a></li>
                 </ul>
@@ -30,17 +34,17 @@
             <li class="menu-item">
                 <a href="#" class="dropdown-button" data-menu="menu-2023">Année 2023-2024</a>
                 <ul class="submenu" id="menu-2023">
-                    <li><a href="5ème_2023.html">5ème</a></li>
-                    <li><a href="3ème_2023.html">3ème</a></li>
-                    <li><a href="Sujet_brevet2024.html.html">Sujet Brevet</a></li>
+                    <li><a href="5eme_2023.html">5eme</a></li>
+                    <li><a href="3eme_2023.html">3eme</a></li>
+                    <li><a href="Sujet_brevet2024.html">Sujet Brevet</a></li>
                     <li><a href="Quetions flashs_2023.html">Quetions flashs</a></li>
                 </ul>
             </li>
             <li class="menu-item">
                 <a href="#" class="dropdown-button" data-menu="menu-2022">Année 2022-2023</a>
                 <ul class="submenu" id="menu-2022">
-                    <li><a href="4ème_2022.html">4ème</a></li>
-                    <li><a href="Sujet_brevet2022.html">3ème</a></li>
+                    <li><a href="4eme_2022.html">4eme</a></li>
+                    <li><a href="Sujet_brevet2022.html">3eme</a></li>
                     <li><a href="Sujet_brevet_2023.html">Sujet Brevet</a></li>
                     <li><a href="#">Questions flashs </a></li>
                 </ul>
@@ -50,7 +54,7 @@
         </ul>
     </nav>
 
-      <!-- Bannière d'Accueil Dynamique -->
+      <!-- Banniere d'Accueil Dynamique -->
       <header class="banner">
         <div class="banner-content" style="text-align: center;">
             <h1>Bienvenue aux Cours de Mathématiques</h1>
@@ -89,13 +93,17 @@
                 <div id="progress-bar" class="progress-bar"></div>
             </div>
             
-            <a href="#" class="cta-button_center">Voir</a>
+           <!-- <a href="#" class="cta-button_center">Voir</a> --> 
             
 </div>
         <style>/* Style pour le texte "Temps restant avant le brevet" */
             .brevet {
                 font-size: 1.5em; /* Ajuste la taille de la police */
-                color: #110163; /* Couleur de texte, tu peux ajuster */
+                background: #480101; /* Dégradé rouge */
+    -webkit-background-clip: text; /* Pour Safari */
+    -webkit-text-fill-color: transparent; /* Pour Safari */
+    background-clip: text; /* Pour les autres navigateurs */
+    color: transparent; /* Assure que le texte est transparent */
                 text-align: center; /* Centrer le texte */
                 margin-bottom: 10px; /* Espacement entre le texte et le timer */
                 font-weight: bold; /* Met en gras pour une meilleure visibilité */
@@ -123,8 +131,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                color: rgba(17, 1, 99, 1);
-            }
+                color:  #480101            }
             
             /* Styles pour les labels sous chaque nombre */
             .label {
@@ -134,9 +141,10 @@
             
             /* Séparateurs entre les blocs de temps */
             .separator {
-                font-size: 1.5em;
-                color: rgba(17, 1, 99, 1);
-                margin-top: 10px;
+                font-size: 1em;
+                color:  #480101;
+
+                margin-top: -40px;
             }
             
 
@@ -153,14 +161,18 @@
                 margin: 20px auto;
                 opacity: 0;
                 animation: fadeInUp 2s ease-in-out forwards 0.5s;
+                box-shadow: #480101;
+
             }
             
             /* Progress bar */
             .progress-bar {
                 width: 0;
                 height: 100%;
-                background-color: rgba(17, 1, 99, 1);
+                background:linear-gradient(135deg, #480101, #f90101);
+
                 animation: loadProgressBar 3s ease-in-out forwards;
+                box-shadow: #480101;
             }
             
             /* Keyframes pour la barre de progression */
@@ -242,7 +254,7 @@
 
      <section id="introduction" class="intro-math">
         <h2 style="font-size :1.4em"> Pourquoi les Mathématiques ?</h2>
-        <p align="justify">Les mathématiques sont la clé pour comprendre le monde qui nous entoure. Elles sont essentielles pour développer des compétences analytiques et résoudre des problèmes complexes.</p>
+        <p align="justify">Les mathématiques sont la clé pour comprendre le monde qui nous entoure. Elles sont essentielles pour développer des compétences analytiques et résoudre des problemes complexes.</p>
        <!-- <a href="#features" class="cta-button">Découvrir plus</a> --> 
     </section>
 

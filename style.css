@@ -202,7 +202,7 @@ body {
 }
 
 .cta-button_center {
-    background-color: orangered; /* Couleur du bouton */
+    background-color: #0056b3; /* Couleur du bouton */
     color: #fff; /* Couleur du texte */
     padding: 10px 20px; /* Ajuste le padding si nécessaire */
     text-decoration: none; /* Enlève la décoration de texte */
@@ -487,3 +487,99 @@ body {
     animation-delay: 0.9s; /* Délai spécifique pour la troisième carte */
 }
 
+/*chapitres */
+/* Animation des blocs */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation des barres séparatrices */
+@keyframes slideIn {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* Styles de base pour le conteneur principal des chapitres */
+.container_chapitre {
+    display: flex;
+    align-items: stretch;
+    padding: 20px;
+    gap: 20px;
+    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+}
+
+/* Styles pour chaque colonne */
+.column {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initialement caché pour l'animation */
+    transform: translateY(20px); /* Déplacer légèrement vers le bas pour l'animation */
+    animation: fadeInUp 0.8s ease-out forwards; /* Appliquer l'animation */
+}
+
+/* Styles pour les barres séparatrices entre les colonnes */
+.separator_chapitre {
+    width: 2px;
+    background-color: #333;
+    height: 100%;
+    align-self: stretch;
+    animation: slideIn 0.8s ease-out forwards; /* Appliquer l'animation */
+}
+
+/* Styles pour les titres et listes dans les colonnes */
+.column h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column li {
+    margin-bottom: 10px;
+}
+
+/* Styles pour la version mobile */
+@media (max-width: 768px) {
+    .container_chapitre {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .separator_chapitre {
+        display: none;
+    }
+
+    .column {
+        width: 88%;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .column h3 {
+        font-size: 1.2em;
+    }
+
+    .column li {
+        font-size: 0.9em;
+    }
+}

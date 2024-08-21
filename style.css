@@ -163,6 +163,7 @@ body {
 .banner-content {
     position: relative; /* Place le contenu au-dessus de l'overlay */
     z-index: 2; /* Assure que le texte et les boutons sont au-dessus de l'overlay */
+    opacity:100%;
 }
 
 
@@ -485,6 +486,4 @@ body {
 .image-card:nth-child(3) {
     animation-delay: 0.9s; /* Délai spécifique pour la troisième carte */
 }
-
-
 

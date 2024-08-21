@@ -22,10 +22,7 @@
             <li class="menu-item">
                 <a href="#" class="dropdown-button" data-menu="menu-2024">Année 2024-2025</a>
                 <ul class="submenu" id="menu-2024">
-                    <li><a href="6ème_2024">6ème</a></li>
-                    <li><a href="5ème_2024">5ème</a></li>
                     <li><a href="4ème_2024">4ème</a></li>
-                    <li><a href="3ème_2024">3ème</a></li>
                     <li><a href="Sujet_brevet2025">Sujet Brevet</a></li>
                     <li><a href="#">Quetions flashs</a></li>
                 </ul>
@@ -33,9 +30,7 @@
             <li class="menu-item">
                 <a href="#" class="dropdown-button" data-menu="menu-2023">Année 2023-2024</a>
                 <ul class="submenu" id="menu-2023">
-                    <li><a href="6ème_2023.html">6ème</a></li>
                     <li><a href="5ème_2023.html">5ème</a></li>
-                    <li><a href="4ème_2023.html">4ème</a></li>
                     <li><a href="3ème_2023.html">3ème</a></li>
                     <li><a href="Sujet_brevet2024.html.html">Sujet Brevet</a></li>
                     <li><a href="Quetions flashs_2023.html">Quetions flashs</a></li>
@@ -44,8 +39,6 @@
             <li class="menu-item">
                 <a href="#" class="dropdown-button" data-menu="menu-2022">Année 2022-2023</a>
                 <ul class="submenu" id="menu-2022">
-                    <li><a href="6ème_2022.html">6ème</a></li>
-                    <li><a href="5ème_2022.html">5ème</a></li>
                     <li><a href="4ème_2022.html">4ème</a></li>
                     <li><a href="Sujet_brevet2022.html">3ème</a></li>
                     <li><a href="Sujet_brevet_2023.html">Sujet Brevet</a></li>
@@ -53,22 +46,180 @@
                 </ul>
             </li>
 
-            <li class="menu-item">
-                <a href="Enseignement.html"data-menu="menu-2024">A propos</a>
-            </li>
+          
         </ul>
     </nav>
 
       <!-- Bannière d'Accueil Dynamique -->
       <header class="banner">
-        <div class="banner-content">
+        <div class="banner-content" style="text-align: center;">
             <h1>Bienvenue aux Cours de Mathématiques</h1>
             <p>Développez vos compétences en mathématiques avec des ressources et des outils modernes.</p>
-            <a href="#introduction" class="cta-button">Commencer</a>
-        </div>
-    </header>
 
-   
+            <br> <br> 
+            <div id="countdown-container" >
+                <p class="brevet"> Temps restant avant le brevet :</p>
+
+
+                <div id="countdown">
+                    <div class="time-block" style="position: center;">
+                        <span class="countdown-days" id="days">00</span>
+                        <span class="label">Jours</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="countdown-hours" id="hours">00</span>
+                        <span class="label">Heures</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="countdown-minutes" id="minutes">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="countdown-seconds" id="seconds">00</span>
+                        <span class="label">Secondes</span>
+                    </div>
+                </div> 
+            </div>
+            
+            <!-- Barre de chargement -->
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            
+            <a href="#" class="cta-button_center">Voir</a>
+            
+</div>
+        <style>/* Style pour le texte "Temps restant avant le brevet" */
+            .brevet {
+                font-size: 1.5em; /* Ajuste la taille de la police */
+                color: #110163; /* Couleur de texte, tu peux ajuster */
+                text-align: center; /* Centrer le texte */
+                margin-bottom: 10px; /* Espacement entre le texte et le timer */
+                font-weight: bold; /* Met en gras pour une meilleure visibilité */
+            }
+            
+            /* Container principal du compte à rebours */
+            #countdown-container {
+                text-align: center;
+                margin-top: 20px;
+                opacity: 0; /* Commence invisible */
+                animation: fadeInUp 2s ease-in-out forwards 1s; /* Animation de fondu */
+            }
+            
+            /* Styles pour le timer */
+            #countdown {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3em;
+                gap: 10px;
+            }
+            
+            /* Chaque bloc de temps */
+            .time-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: rgba(17, 1, 99, 1);
+            }
+            
+            /* Styles pour les labels sous chaque nombre */
+            .label {
+                font-size: 0.5em;
+                margin-top: 5px;
+            }
+            
+            /* Séparateurs entre les blocs de temps */
+            .separator {
+                font-size: 1.5em;
+                color: rgba(17, 1, 99, 1);
+                margin-top: 10px;
+            }
+            
+
+            
+            
+            /* Progress bar container */
+            .progress-bar-container {
+                width: 80%;
+                max-width: 600px;
+                height: 10px;
+                background-color: #ccc;
+                border-radius: 5px;
+                overflow: hidden;
+                margin: 20px auto;
+                opacity: 0;
+                animation: fadeInUp 2s ease-in-out forwards 0.5s;
+            }
+            
+            /* Progress bar */
+            .progress-bar {
+                width: 0;
+                height: 100%;
+                background-color: rgba(17, 1, 99, 1);
+                animation: loadProgressBar 3s ease-in-out forwards;
+            }
+            
+            /* Keyframes pour la barre de progression */
+            @keyframes loadProgressBar {
+                to {
+                    width: 100%;
+                }
+            }
+            
+            /* Animation de fondu pour le timer */
+            @keyframes fadeInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            </style>
+
+        
+        
+    </header>
+    
+
+    <script>
+        // Fixe la date du brevet
+        const brevetDate = new Date("June 26, 2025 00:00:00").getTime();
+    
+        // Met à jour le compte à rebours toutes les secondes
+        const countdownFunction = setInterval(function() {
+            // Obtenir la date et l'heure actuelles
+            const now = new Date().getTime();
+            
+            // Calculer la différence entre la date actuelle et la date du brevet
+            const distance = brevetDate - now;
+            
+            // Calculer les jours, heures, minutes et secondes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Afficher les résultats dans les éléments HTML respectifs
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            
+            // Si le compte à rebours est terminé
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Le brevet est en cours !";
+            }
+        }, 1000);
+    </script>
+       
 
     <section id="features" class="features">
         <!-- <h2>Fonctionnalités Clés</h2> -->

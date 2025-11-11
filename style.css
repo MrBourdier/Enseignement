@@ -183,7 +183,7 @@ body {
 }
 
 .cta-button {
-    background-color: #0056b3 ;
+    background-color: #000000 ;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -459,7 +459,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #0056b3; /* Couleur de fond de la face arrière */
+    background-color: #000000; /* Couleur de fond de la face arrière */
     color: #fff; /* Couleur du texte sur la face arrière */
     transform: rotateY(180deg); /* Cache la face arrière avant le retournement */
     text-align: center;

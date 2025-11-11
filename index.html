@@ -47,7 +47,7 @@
             <li class="menu-item">
                 <a href="#" class="dropdown-button" data-menu="menu-2024">Année 2024-2025</a>
                 <ul class="submenu" id="menu-2024">
-                    <li><a href="4eme_2024">4eme</a></li>
+                    <li><a href="4eme_2024.html">4eme</a></li>
                     <li><a href="Sujet_brevet2025">Sujet Brevet</a></li>
                     <li><a href="#">Quetions flashs</a></li>
                 </ul>
@@ -248,36 +248,30 @@
     
 
     <script>
-        // Fixe la date du brevet
+        // Date de fin : 26 juin 2025 à minuit
         const brevetDate = new Date("June 26, 2025 00:00:00").getTime();
     
-        // Met à jour le compte à rebours toutes les secondes
         const countdownFunction = setInterval(function() {
-            // Obtenir la date et l'heure actuelles
             const now = new Date().getTime();
-            
-            // Calculer la différence entre la date actuelle et la date du brevet
             const distance = brevetDate - now;
-            
-            // Calculer les jours, heures, minutes et secondes
+    
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Afficher les résultats dans les éléments HTML respectifs
+    
             document.getElementById("days").innerText = String(days).padStart(2, '0');
             document.getElementById("hours").innerText = String(hours).padStart(2, '0');
             document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
             document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-            
-            // Si le compte à rebours est terminé
+    
             if (distance < 0) {
                 clearInterval(countdownFunction);
                 document.getElementById("countdown").innerHTML = "Le brevet est en cours !";
             }
         }, 1000);
     </script>
+    
        
 
     <section id="features" class="features">

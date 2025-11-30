@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Enseignement </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/x-icon" class="round-image">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Enseignement">
+    <meta property="og:description" content="Mr Bourdier - Professeur de mathématiques">
+    <meta property="og:image" content="https://MrBourdier.github.io/Enseignement/logo.png">
+    <meta property="og:image:secure_url" content="https://MrBourdier.github.io/Enseignement/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mrbourdier.github.io/Enseignement/index.html">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Enseignement">
+    <meta name="twitter:description" content="Mr Bourdier - Professeur de mathématiques">
+    <meta name="twitter:image" content="https://MrBourdier.github.io/Enseignement/logo.png">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+
+    <nav class="menu">
+        <div class="menu-toggle" id="menu-toggle">
+            &#9776; <!-- Symbole hamburger -->
+        </div>
+        <div class="nom_enseignant" id="nom-enseignant"> Mr Bourdier </div>
+        <ul class="menu-list" id="menu-list">
+
+            <li class="menu-item">
+                <a href="Enseignement.html"data-menu="menu-2024">Accueil</a>
+            </li>
+
+            <li class="menu-item">
+                <a href="#" class="dropdown-button" data-menu="menu-2025">Année 2025-2026</a>
+                <ul class="submenu" id="menu-2025">
+                    
+                    <li><a href="5eme_2025.html">5eme</a></li>
+                    <li><a href="4eme_2025.html">4eme</a></li>
+                    <li><a href="3eme_2025.html">3eme</a></li>
+                    <li><a href="prepabrevet.html">Prépa brevet</a></li>
+
+                </ul>
+            </li>
+            
+            <li class="menu-item">
+                <a href="#" class="dropdown-button" data-menu="menu-2024">Année 2024-2025</a>
+                <ul class="submenu" id="menu-2024">
+                    <li><a href="4eme_2024.html">4eme</a></li>
+                    <li><a href="brevet2025.pdf">Sujet Brevet</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="dropdown-button" data-menu="menu-2023">Année 2023-2024</a>
+                <ul class="submenu" id="menu-2023">
+                    <li><a href="5eme_2023.html">5eme</a></li>
+                    <li><a href="3eme_2023.html">3eme</a></li>
+                    <li><a href="brevet2024.pdf">Sujet Brevet</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="dropdown-button" data-menu="menu-2022">Année 2022-2023</a>
+                <ul class="submenu" id="menu-2022">
+                    <li><a href="4eme_2022.html">4eme</a></li>
+                    <li><a href="3eme_2022.html">3eme</a></li>
+                    <li><a href="brevet2023.pdf">Sujet Brevet</a></li>
+                </ul>
+            </li>
+
+          
+        </ul>
+    </nav>
+
+    <!-- Banniere d'Accueil Dynamique -->
+<header class="banner">
+  <div class="banner-content" style="text-align: center;">
+    <h1>Bienvenue aux Cours de Mathématiques</h1>
+    <p>Développez vos compétences en mathématiques avec des ressources et des outils modernes.</p>
+
+    <br><br> 
+    <div id="countdown-container">
+      <p class="brevet">Temps restant avant le brevet :</p>
+
+      <div id="countdown">
+        <div class="time-block">
+          <span class="countdown-days" id="days">00</span>
+          <span class="label">Jours</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="time-block">
+          <span class="countdown-hours" id="hours">00</span>
+          <span class="label">Heures</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="time-block">
+          <span class="countdown-minutes" id="minutes">00</span>
+          <span class="label">Minutes</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="time-block">
+          <span class="countdown-seconds" id="seconds">00</span>
+          <span class="label">Secondes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barre de progression -->
+    <div class="progress-bar-container">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+  </div>
+</header>
+
+<style>
+.brevet {
+  font-size: 1.5em;
+  background: #480101;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#countdown-container {
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards 1s;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  gap: 10px;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #480101;
+}
+
+.label {
+  font-size: 0.5em;
+  margin-top: 5px;
+}
+
+.separator {
+  font-size: 1em;
+  color: #480101;
+  margin-top: -40px;
+}
+
+.progress-bar-container {
+  width: 80%;
+  max-width: 600px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px auto;
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards 0.5s;
+  box-shadow: #480101;
+}
+
+.progress-bar {
+  width: 0%;
+  min-width: 2px; /* barre visible même si très peu remplie */
+  height: 100%;
+  background: linear-gradient(135deg, #480101, #f90101);
+  transition: width 1s linear;
+}
+
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .brevet { font-size: 1em; }
+  #countdown { font-size: 1.5em; gap: 3px; }
+  .label { font-size: 0.3em; }
+  .separator { font-size: 0.6em; }
+  .progress-bar-container { width: 80%; height: 6px; }
+}
+
+            
+/* Adaptation spécifique pour les très petits écrans */
+@media (max-width: 480px) {
+    .brevet {
+        font-size: 1em; /* Réduction supplémentaire pour très petits écrans */
+    }
+    
+    #countdown {
+        font-size: 1.5em; /* Réduction supplémentaire pour très petits écrans */
+        gap: 3px; /* Réduction de l'espacement pour très petits écrans */
+    }
+
+    .label {
+        font-size: 0.3em; /* Réduction supplémentaire pour très petits écrans */
+    }
+
+    .separator {
+        font-size: 0.6em; /* Réduction supplémentaire pour très petits écrans */
+    }
+
+    .progress-bar-container {
+        width: 80%;
+        height: 6px; /* Réduction supplémentaire pour très petits écrans */
+    }
+}
+            </style>
+
+<script>
+  // Date du brevet
+  const brevetDate = new Date("June 26, 2026 00:00:00").getTime();
+
+  // Date du début (au chargement de la page)
+  const startDate = new Date().getTime();
+
+  // Durée totale entre aujourd'hui et le brevet
+  const totalDuration = brevetDate - startDate;
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = brevetDate - now;
+
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML = "Le brevet est en cours !";
+      document.getElementById("progress-bar").style.width = "100%";
+      return;
+    }
+
+    // Calcul jours, heures, minutes, secondes
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = String(days).padStart(2,'0');
+    document.getElementById("hours").innerText = String(hours).padStart(2,'0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2,'0');
+    document.getElementById("seconds").innerText = String(seconds).padStart(2,'0');
+
+    // Pourcentage de la barre
+    let percent = 100 * (1 - distance / totalDuration);
+    percent = Math.max(0, Math.min(percent, 100));
+    document.getElementById("progress-bar").style.width = percent + "%";
+  }
+
+  // Mise à jour toutes les secondes
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+
+
+
+
+        
+        
+    </header>
+    
+
+  
+
+       
+
+    <section id="features" class="features">
+        <!-- <h2>Fonctionnalités Clés</h2> -->
+        <div class="feature-grid">
+            
+            <div class="feature-item">
+                <h3>Outils de Révision</h3>
+                <p>Accédez aux leçons pour réviser.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Quetions flashs </h3>
+                <p>Testez vos connaissances avec des questions flashs adaptés.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Supports de Cours</h3>
+                <p>Consultez des supports de cours pour approfondir vos connaissances.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Liens utiles</h3>
+                 🖋️<a href="https://coopmaths.fr/alea/"> Maths aléa  </a> <br>
+                 🖋️ <a href="https://mathsmentales.net/">  Maths mental </a>
+                
+            </div>
+        </div>
+    </section>
+
+     <section id="introduction" class="intro-math">
+                <h2 style="font-size :1.4em"> Mathématicien du mois </h2>
+
+        <div class="mathematician-container">
+    <img id="math-image" alt="Mathématicien du mois">
+    <div class="math-info">
+        <h2 id="math-name"></h2>
+        <p id="math-desc"></p>
+    </div>
+</div>
+</section>
+
+<script src="maths.js"></script>
+ 
+    </section>
+
+     <section id="introduction" class="intro-math">
+        <h2 style="font-size :1.4em"> Pourquoi les Mathématiques ?</h2>
+        <p align="justify">Les mathématiques sont la clé pour comprendre le monde qui nous entoure. Elles sont essentielles pour développer des compétences analytiques et résoudre des problemes complexes.</p>
+       <!-- <a href="#features" class="cta-button">Découvrir plus</a> --> 
+    </section>
+
+
+    <footer class="site-footer" style="margin-left:2%; margin-right:2%">
+        <div class="footer-content">
+            <p class="footer-name"> Mr Bourdier <br class="mobile-only">- Professeur de mathématiques </p>
+            <p><a href="mentions_legales.html" class="footer-link">Mentions légales</a></p>
+            <p class="footer-location">Saint-Étienne, France</p>
+        </div>
+    </footer>
+    
+
+
+    
+
+
+    <script src="script.js"></script>
+
+
+
+</body>
+</html>

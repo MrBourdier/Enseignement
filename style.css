@@ -585,7 +585,17 @@ body {
 }
 
 
+.mathematician-container img {
+    width: 250px;
+    max-width: 100%; /* jamais dépasser le conteneur */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block; /* important pour éviter des décalages */
+}
+
 .mathematician-container {
+    
     display: flex;
     align-items: flex-start;
     gap: 20px;
@@ -615,3 +625,4 @@ body {
         margin: 0 auto;
     }
 }
+
